@@ -113,7 +113,7 @@ const VapApp: React.FC = () => {
                     <div className="flex flex-col gap-8 order-1 lg:order-2">
                         <div className="space-y-4">
                             <p className="text-white text-lg leading-relaxed">
-                                O VAP App é uma solução digital criada para <span className="text-blue-400 font-bold">apoiar, orientar e dar segurança</span> a pais, cuidadores e profissionais de saúde que convivem diariamente com a traqueostomia pediátrica.
+                                O VAP App é uma solução digital criada para <span className="text-blue-400 font-bold">apoiar, orientar e dar segurança</span> a pais e cuidadores que convivem diariamente com a traqueostomia pediátrica.
                             </p>
                             <p className="text-slate-300 text-base leading-relaxed">
                                 Desenvolvido pela <span className="text-blue-400 font-semibold">Innova Digital</span>, o VAP App une tecnologia, educação e cuidado humanizado em um único aplicativo, com conteúdos confiáveis, ferramentas práticas e uma comunidade segura.

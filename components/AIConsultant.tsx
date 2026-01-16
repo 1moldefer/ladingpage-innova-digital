@@ -3,9 +3,20 @@ import { ChatMessage } from '../types';
 
 const AIConsultant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Olá! Sou o assistente virtual da Innova Digital. Posso responder perguntas sobre nossa empresa e o VAP App. Como posso ajudar?' }
-  ]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+
+  useEffect(() => {
+    const getGreeting = () => {
+      const hour = new Date().getHours();
+      if (hour >= 5 && hour < 12) return 'Bom dia!';
+      if (hour >= 12 && hour < 18) return 'Boa tarde!';
+      return 'Boa noite!';
+    };
+
+    setMessages([
+      { role: 'model', text: `${getGreeting()} Sou o assistente virtual da Innova Digital. Posso responder perguntas sobre nossa empresa e o VAP App. Como posso ajudar?` }
+    ]);
+  }, []);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);

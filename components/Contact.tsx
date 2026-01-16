@@ -29,17 +29,42 @@ const Contact: React.FC = () => {
               </div>
             )}
 
-            {/* Form com action direto para FormSubmit */}
+            {/* Form using AJAX */}
             <form
-              action="https://formsubmit.co/contato@innovadigital.com.br"
-              method="POST"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+
+                // Add hidden fields manually if needed or let them be part of formData
+                // FormSubmit ajax setup
+                try {
+                  const response = await fetch("https://formsubmit.co/ajax/contato@innovadigital.com.br", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                      'Accept': 'application/json'
+                    }
+                  });
+
+                  if (response.ok) {
+                    setSubmitted(true);
+                    form.reset();
+                    // Hide success message after 5 seconds if desired, currently it stays.
+                  } else {
+                    alert("Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.");
+                  }
+                } catch (error) {
+                  alert("Erro de conexão. Verifique sua internet e tente novamente.");
+                }
+              }}
               className="space-y-5"
             >
               {/* Hidden fields for FormSubmit configuration */}
               <input type="hidden" name="_subject" value="Nova mensagem do site Innova Digital" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="http://localhost:3000/?success=true" />
+              {/* _next is not needed for AJAX */}
 
               <div>
                 <label className="block text-sm font-semibold text-slate-300 mb-2">Nome</label>
