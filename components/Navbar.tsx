@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-6">
             <a className="text-white/80 text-sm font-semibold hover:text-white transition-colors" href="#sobre">Sobre</a>
-            <a className="text-white/80 text-sm font-semibold hover:text-white transition-colors" href="#solucoes">Soluções</a>
+            <a className="text-white/80 text-sm font-semibold hover:text-white transition-colors" href="#atuacao">Soluções</a>
             <a className="text-white/80 text-sm font-semibold hover:text-white transition-colors" href="#vap-app">VAP App</a>
             <a className="text-white/80 text-sm font-semibold hover:text-white transition-colors" href="#contato">Contato</a>
           </nav>
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden bg-[#0d1b2a]/98 backdrop-blur-md border-t border-white/10 py-4">
           <nav className="flex flex-col gap-2 px-6">
             <a className="text-white/80 text-base font-semibold py-2 hover:text-white transition-colors" href="#sobre" onClick={() => setIsMobileMenuOpen(false)}>Sobre</a>
-            <a className="text-white/80 text-base font-semibold py-2 hover:text-white transition-colors" href="#solucoes" onClick={() => setIsMobileMenuOpen(false)}>Soluções</a>
+            <a className="text-white/80 text-base font-semibold py-2 hover:text-white transition-colors" href="#atuacao" onClick={() => setIsMobileMenuOpen(false)}>Soluções</a>
             <a className="text-white/80 text-base font-semibold py-2 hover:text-white transition-colors" href="#vap-app" onClick={() => setIsMobileMenuOpen(false)}>VAP App</a>
             <a className="text-white/80 text-base font-semibold py-2 hover:text-white transition-colors" href="#contato" onClick={() => setIsMobileMenuOpen(false)}>Contato</a>
             <a

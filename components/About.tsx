@@ -6,18 +6,18 @@ const About: React.FC = () => {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col gap-6">
-            <span className="text-blue-400 font-bold tracking-widest uppercase text-xs">Quem Somos</span>
+            <span className="text-blue-400 font-bold tracking-widest uppercase text-xs">Nossa História</span>
             <h2 className="text-white text-3xl md:text-4xl font-extrabold leading-tight">
-              Tecnologia com propósito e responsabilidade
+              De médicos para o mundo: tecnologia que salva vidas
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed">
-              A <span className="text-blue-400 font-bold">Innova Digital</span> nasceu da convicção de que a tecnologia pode — e deve — melhorar a vida de quem cuida e de quem é cuidado. Somos uma empresa brasileira especializada no desenvolvimento de soluções digitais para o setor de saúde.
+              A <span className="text-blue-400 font-bold">Innova Digital</span> não é apenas uma empresa de tecnologia. Somos uma <strong>HealthTech</strong> fundada pelo <strong>Dr. Wander Mattos Cardoso</strong>, cirurgião torácico com vasta experiência no cuidado de pacientes complexos.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Combinamos responsabilidade ética com inovação tecnológica para criar ferramentas que realmente fazem a diferença: aplicativos, plataformas e sistemas que apoiam profissionais de saúde, instituições, pais e cuidadores no dia a dia.
+              Nossa história começa dentro do <strong>Projeto Respirar Alagoas</strong>, um programa pioneiro do SUS. Ao vivenciar os desafios diários de famílias e profissionais na gestão de vias aéreas pediátricas, percebemos que a falta de informação e ferramentas adequadas gerava riscos evitáveis.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Nosso compromisso é desenvolver tecnologia acessível, segura e fundamentada em evidências, sempre respeitando as diretrizes médicas e a privacidade dos usuários.
+              Decidimos então criar nossas próprias soluções. Não desenvolvemos sistemas para terceiros — criamos produtos digitais, como o <strong>VAP App</strong>, que democratizam o acesso ao conhecimento médico de ponta, promovendo segurança e autonomia para quem mais precisa.
             </p>
           </div>
 

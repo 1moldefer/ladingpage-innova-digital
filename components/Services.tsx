@@ -16,33 +16,32 @@ const Services: React.FC = () => {
     {
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
       iconElement: null,
-      title: 'Aplicativos para Saúde',
-      description: 'Desenvolvimento de apps móveis focados em apoiar o cuidado, a educação e a gestão em saúde.'
+      title: 'Cuidado Humanizado',
+      description: 'Nossas soluções nascem para acolher famílias. Desenvolvemos tecnologias que simplificam jornadas de cuidado complexo, trazendo segurança e apoio para o lar.'
     },
     {
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       ),
       iconElement: null,
-      title: 'Plataformas Digitais',
-      description: 'Sistemas web robustos para gestão hospitalar, clínicas e organizações de saúde.'
+      title: 'Educação como Saúde',
+      description: 'Acreditamos que informação salva vidas. Traduzimos protocolos clínicos em linguagem acessível, empoderando cuidadores com o conhecimento necessário para agir.'
     },
     {
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
       iconElement: null,
-      title: 'Soluções Personalizadas',
-      description: 'Projetos sob medida para atender às necessidades específicas do seu fluxo de trabalho.'
+      title: 'Impacto Social & SUS',
+      description: 'Nascemos da vivência no SUS. Criamos tecnologias acessíveis e escaláveis, comprometidas em reduzir desigualdades e democratizar o suporte digital em saúde no Brasil.'
     },
     {
       icon: (
@@ -51,18 +50,21 @@ const Services: React.FC = () => {
         </svg>
       ),
       iconElement: null,
-      title: 'Segurança e Conformidade',
-      description: 'Tecnologia desenvolvida com foco em LGPD, proteção de dados e diretrizes de saúde.'
+      title: 'Evidência e Segurança',
+      description: 'Nossa inovação é guiada pela ética médica. Cada funcionalidade é validada por evidências científicas, priorizando a segurança do paciente acima da tecnologia.'
     },
   ];
 
   return (
-    <section className="py-20 bg-[#0d1b2a] border-t border-white/10" id="solucoes">
+    <section className="py-20 bg-[#0d1b2a] border-t border-white/10" id="atuacao">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <div className="text-center max-w-[700px] mx-auto mb-16">
-          <span className="text-blue-400 font-bold tracking-widest uppercase text-xs mb-2 block">O Que Fazemos</span>
-          <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-4">Soluções digitais para o ecossistema de saúde</h2>
-          <p className="text-slate-300 text-lg">Desenvolvemos tecnologia aplicada ao cuidado, gestão e educação em saúde, sempre com responsabilidade e inovação.</p>
+        <div className="text-center max-w-[800px] mx-auto mb-16">
+          <span className="text-blue-400 font-bold tracking-widest uppercase text-xs mb-2 block">PROPÓSITO INSTITUCIONAL</span>
+          <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-6">Inovação fundamentada em ciência e cuidado</h2>
+          <p className="text-slate-300 text-lg leading-relaxed">
+            A <span className="text-blue-400 font-bold">Innova Digital</span> é uma HealthTech brasileira de produtos próprios.
+            Dedicamos nossa expertise para criar soluções digitais que nascem da prática clínica para transformar vidas.
+          </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
