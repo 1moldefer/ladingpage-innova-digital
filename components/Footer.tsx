@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
 
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <img src="/logo.jpg" alt="Innova Digital" className="h-12 w-auto object-contain mb-4 rounded-lg" />
+            <img src="/footer-logo.jpg" alt="Innova Digital" className="h-16 w-auto object-contain mb-4 rounded-lg" />
             <p className="text-slate-400 text-sm leading-relaxed max-w-[350px] mb-6">
               Tecnologia a serviço da saúde. Desenvolvemos soluções digitais seguras e inovadoras para o setor de saúde.
             </p>
@@ -90,14 +90,22 @@ const Footer: React.FC = () => {
 
         {/* Institutional Info */}
         <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="text-sm text-slate-500">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-sm text-slate-500 text-center md:text-left">
               <p className="font-semibold text-slate-400 mb-1">INNOVA DIGITAL LTDA</p>
               <p>CNPJ: 61.674.924/0001-68</p>
               <p className="mt-1">Av. Comendador Gustavo Paiva, 3692 – Mangabeiras</p>
               <p>Maceió – AL, 57037-035</p>
             </div>
-            <p className="text-sm text-slate-500">© 2026 Innova Digital. Todos os direitos reservados.</p>
+
+            <div className="flex flex-col items-center md:items-end gap-2">
+              <div className="flex gap-4 text-sm text-slate-500">
+                <a href="#" className="hover:text-blue-400 transition-colors">Política de Privacidade</a>
+                <span>•</span>
+                <a href="#" className="hover:text-blue-400 transition-colors">Termos de Uso</a>
+              </div>
+              <p className="text-sm text-slate-500">© 2026 Innova Digital. Todos os direitos reservados.</p>
+            </div>
           </div>
         </div>
       </div>

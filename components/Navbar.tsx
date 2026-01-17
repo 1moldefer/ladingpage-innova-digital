@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <img src="/logo.jpg" alt="Innova Digital" className="h-10 w-auto object-contain rounded-lg border border-white/10 shadow-sm" />
+          <img src="/logo.png" alt="Innova Digital" className="h-10 w-auto object-contain rounded-lg border border-white/10 shadow-sm" />
         </a>
 
         {/* Desktop Navigation */}

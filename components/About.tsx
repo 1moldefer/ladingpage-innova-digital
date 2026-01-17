@@ -8,17 +8,22 @@ const About: React.FC = () => {
           <div className="flex flex-col gap-6">
             <span className="text-blue-400 font-bold tracking-widest uppercase text-xs">Nossa História</span>
             <h2 className="text-white text-3xl md:text-4xl font-extrabold leading-tight">
-              De médicos para o mundo: tecnologia que salva vidas
+              De médicos para o mundo: tecnologia que nasce do cuidado
             </h2>
-            <p className="text-slate-300 text-lg leading-relaxed">
-              A <span className="text-blue-400 font-bold">Innova Digital</span> não é apenas uma empresa de tecnologia. Somos uma <strong>HealthTech</strong> fundada pelo <strong>Dr. Wander Mattos Cardoso</strong>, cirurgião torácico com vasta experiência no cuidado de pacientes complexos.
-            </p>
-            <p className="text-slate-300 text-lg leading-relaxed">
-              Nossa história começa dentro do <strong>Projeto Respirar Alagoas</strong>, um programa pioneiro do SUS. Ao vivenciar os desafios diários de famílias e profissionais na gestão de vias aéreas pediátricas, percebemos que a falta de informação e ferramentas adequadas gerava riscos evitáveis.
-            </p>
-            <p className="text-slate-300 text-lg leading-relaxed">
-              Decidimos então criar nossas próprias soluções. Não desenvolvemos sistemas para terceiros — criamos produtos digitais, como o <strong>VAP App</strong>, que democratizam o acesso ao conhecimento médico de ponta, promovendo segurança e autonomia para quem mais precisa.
-            </p>
+            <div className="space-y-4 text-slate-300 text-lg leading-relaxed">
+              <p>
+                A <span className="text-blue-400 font-bold">Innova Digital</span> é uma <strong>HealthTech</strong> que nasce da experiência clínica do <strong>Dr. Wander Mattos Cardoso</strong>, cirurgião torácico. Construída a partir da vivência real, nossa missão é simples: levar a segurança do hospital para dentro da casa dos pacientes.
+              </p>
+              <p>
+                Tudo começou com uma ligação de madrugada: uma mãe desesperada, um filho em crise respiratória e uma orientação por telefone que salvou uma vida.
+              </p>
+              <blockquote className="border-l-4 border-blue-500 pl-4 italic bg-white/5 p-4 rounded-r-lg text-base">
+                “Com orientação calma e técnica, conduzi aquela mãe passo a passo até que ela conseguisse agir a tempo. Ali, entendi que o conhecimento certo, na hora certa, é o que define um desfecho seguro e preserva vidas.”
+              </blockquote>
+              <p>
+                Não criamos tecnologia por tendência, mas por necessidade. A Innova Digital transforma a vivência clínica em soluções digitais acessíveis, garantindo que a segurança e o suporte técnico estejam sempre disponíveis na palma da mão.
+              </p>
+            </div>
           </div>
 
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">

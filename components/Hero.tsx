@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
         {/* Logo */}
         <div className="mb-8 inline-block">
           <img
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Innova Digital Logo"
             className="h-24 w-auto object-contain mx-auto rounded-xl border border-white/10 shadow-lg"
           />

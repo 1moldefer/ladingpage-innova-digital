@@ -140,6 +140,9 @@ const Contact: React.FC = () => {
               >
                 Enviar mensagem
               </button>
+              <p className="text-xs text-slate-500 text-center mt-4">
+                Seus dados estão seguros. Ao enviar, você concorda com nossa <a href="#" className="underline hover:text-blue-400">Política de Privacidade</a>.
+              </p>
             </form>
           </div>
         </div>
