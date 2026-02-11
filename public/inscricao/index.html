@@ -2,528 +2,309 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inscreva-se | Innova Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Inscrição | Curso</title>
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0
+        :root {
+            --bg: #0b0e12;
+            --card: #0f131a;
+            --text: #e7ecf3;
+            --muted: #8a93a5;
+            --accent: #ff6a00;
+            --ring: rgba(255, 106, 0, .35);
+            --border: #1b2330;
         }
 
-        html {
-            -webkit-text-size-adjust: 100%
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow-x: hidden
         }
 
         body {
-            font-family: 'Manrope', system-ui, -apple-system, sans-serif;
-            background: #0d1b2a;
-            color: #e2e8f0;
-            min-height: 100dvh;
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            background: linear-gradient(180deg, #0b0e12, #0e1117);
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .wrap {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: clamp(16px, 4vw, 24px);
+            min-height: 100svh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 24px 16px;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 520px;
-            text-align: center;
-        }
-
-        .logo {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            object-fit: cover;
-            margin-bottom: 28px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, .4);
-        }
-
-        h1 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: #fff;
-            line-height: 1.3;
-        }
-
-        .subcopy {
-            font-size: .95rem;
-            color: #94a3b8;
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        .subcopy span {
-            color: #60a5fa;
-            font-weight: 600;
+            align-items: center
         }
 
         .card {
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .08);
+            width: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+            border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 28px 24px;
-            backdrop-filter: blur(12px);
-            text-align: left;
+            padding: clamp(18px, 4vw, 26px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+        }
+
+        h1 {
+            margin: 0 0 .35rem;
+            font-size: clamp(1.6rem, 4.8vw, 2rem);
+            line-height: 1.2
+        }
+
+        p.sub {
+            margin: .15rem 0 1rem;
+            color: var(--muted);
+            font-size: clamp(.95rem, 3.2vw, 1.05rem)
         }
 
         label {
             display: block;
-            font-size: .8rem;
-            font-weight: 600;
-            color: #94a3b8;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: .04em;
+            font-weight: 700;
+            margin: .5rem 0 .35rem
+        }
+
+        .required {
+            color: var(--accent);
+            margin-left: .25rem
         }
 
         input[type="text"],
         input[type="email"],
         input[type="tel"] {
-            display: block;
             width: 100%;
-            padding: 14px 16px;
-            font-size: 16px;
-            font-family: inherit;
-            color: #fff;
-            background: rgba(255, 255, 255, .06);
-            border: 1px solid rgba(255, 255, 255, .12);
-            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: #0d1218;
+            color: var(--text);
+            border-radius: 12px;
+            padding: 1rem;
             outline: none;
-            transition: border-color .2s, box-shadow .2s;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        input::placeholder {
-            color: #475569
+            transition: border-color .2s, box-shadow .2s, background .2s;
+            font-size: 16px;
+            /* evita zoom no iOS */
+            min-height: 52px;
         }
 
         input:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, .15);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--ring);
         }
 
-        .field {
-            margin-bottom: 18px
+        input::placeholder {
+            color: #9aa6bb
         }
 
-        .field:last-of-type {
-            margin-bottom: 24px
+        .actions {
+            display: flex;
+            gap: .8rem;
+            margin-top: 1.1rem
         }
 
-        .hp {
-            position: absolute;
-            left: -9999px;
-            opacity: 0;
-            height: 0;
-            width: 0;
-            overflow: hidden;
-            pointer-events: none
-        }
-
-        button {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            font-size: 1rem;
-            font-weight: 700;
-            font-family: inherit;
-            color: #0d1b2a;
-            background: #facc15;
+        .actions .btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            background: linear-gradient(135deg, var(--accent), #ff9745 55%, #ffd089 120%);
+            color: #1a120b;
+            font-weight: 800;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
+            padding: 1rem 1.1rem;
             cursor: pointer;
-            transition: background .2s, transform .1s, opacity .2s;
-            letter-spacing: .01em;
+            box-shadow: 0 12px 28px rgba(255, 106, 0, .25);
+            font-size: 1rem;
+            min-height: 56px;
+            transition: transform .06s ease, filter .15s ease;
         }
 
-        button:hover {
-            background: #fde047;
-            transform: translateY(-1px)
+        .btn:hover {
+            filter: brightness(1.04)
         }
 
-        button:active {
-            transform: translateY(0)
+        .btn:active {
+            transform: translateY(1px)
         }
 
-        button:disabled {
-            opacity: .5;
-            cursor: not-allowed;
-            transform: none
+        .btn[disabled] {
+            opacity: .6;
+            cursor: not-allowed
+        }
+
+        .footnote {
+            color: var(--muted);
+            font-size: .9rem;
+            margin-top: .75rem
         }
 
         .alert {
-            padding: 12px 16px;
-            border-radius: 10px;
-            font-size: .85rem;
-            margin-bottom: 18px;
             display: none;
-            text-align: left;
-            outline: none;
+            margin: .6rem 0 0;
+            padding: .9rem 1rem;
+            border-radius: 12px;
+            font-size: .95rem
         }
 
-        .alert-success {
+        .alert.success {
             background: rgba(16, 185, 129, .12);
-            color: #6ee7b7;
-            border: 1px solid rgba(16, 185, 129, .25)
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, .35)
         }
 
-        .alert-error {
+        .alert.error {
             background: rgba(239, 68, 68, .12);
-            color: #fca5a5;
-            border: 1px solid rgba(239, 68, 68, .25)
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, .35)
         }
 
-        .alert.show {
-            display: block
-        }
+        /* Muito pequenos */
+        @media (max-width:320px) {
+            .wrap {
+                padding: 14px
+            }
 
-        .footer {
-            margin-top: 24px;
-            font-size: .75rem;
-            color: #475569;
-        }
-
-        .footer a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline
+            .card {
+                padding: 16px
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="/logo.png" alt="Innova Digital" class="logo">
-        <h1>Receba novidades do VAPApp</h1>
-        <p class="subcopy">Inscreva-se para receber mais informações do aplicativo <span>VAPApp</span> no WhatsApp.
-            Deixe seu nome, e-mail e número abaixo.</p>
+    <div class="wrap">
+        <main class="card">
+            <header>
+                <h1>Inscreva‑se para o curso</h1>
+                <p class="sub">Deixe seu <strong>nome</strong>, <strong>e‑mail</strong> e <strong>WhatsApp</strong> para
+                    receber o acesso e os materiais.</p>
+            </header>
 
-        <div class="card">
-            <div id="alertBox" class="alert" role="status" aria-live="polite" tabindex="-1"></div>
-
-            <form id="signupForm" novalidate>
-
-                <div class="hp" aria-hidden="true">
-                    <label for="website_field">Não preencha</label>
-                    <input type="text" id="website_field" name="website_field" tabindex="-1" autocomplete="off">
-                </div>
+            <form id="lead-form" novalidate>
+                <!-- Honeypot não é necessário se usarmos fetch com lógica customizada, mas mantemos por segurança -->
+                <input type="text" name="website_field" id="website_field" autocomplete="off" tabindex="-1"
+                    aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" />
 
                 <div class="field">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required
-                        autocomplete="name">
+                    <label for="nome">Nome completo<span class="required">*</span></label>
+                    <input id="nome" name="nome" type="text" placeholder="Ex.: Ana Lima" autocomplete="name" required />
                 </div>
-
                 <div class="field">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="seu@email.com" required
-                        autocomplete="email">
+                    <label for="email">E‑mail<span class="required">*</span></label>
+                    <input id="email" name="email" type="email" placeholder="voce@empresa.com" autocomplete="email"
+                        required />
                 </div>
-
                 <div class="field">
-                    <label for="whatsapp">WhatsApp</label>
-                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 91234-5678" required
-                        autocomplete="tel" inputmode="numeric">
+                    <label for="whatsapp">WhatsApp<span class="required">*</span></label>
+                    <input id="whatsapp" name="whatsapp" type="tel" inputmode="numeric" placeholder="(11) 91234‑5678"
+                        autocomplete="tel" required />
                 </div>
 
-                <button type="submit" id="btnSubmit">Garantir minha vaga</button>
+                <div class="actions">
+                    <button type="submit" id="submit-btn" class="btn">Garantir minha vaga</button>
+                </div>
+
+                <div id="alert-success" class="alert success" role="status" aria-live="polite">Inscrição realizada! Em
+                    instantes você recebe os detalhes.</div>
+                <div id="alert-error" class="alert error" role="alert">Não foi possível enviar. Revise os campos e tente
+                    novamente.</div>
+                <p class="footnote">Ao enviar, você concorda em receber comunicações sobre este curso. Você pode se
+                    descadastrar a qualquer momento.</p>
             </form>
-        </div>
-
-        <p class="footer">
-            <a href="/">← Voltar para o site</a> · Innova Digital
-        </p>
+        </main>
     </div>
 
     <script>
-        (function () {
-            'use strict';
+        // ===== CONFIGURAÇÃO =====
+        // Endpoint do Webhook (ajustado para webhook ao invés de workflow UI)
+        const WEBHOOK_URL = 'https://automatic.ferhost.com.br/webhook/xv91EaZEB7vXjh7ZVsr6d';
+        // Token de acesso (Bearer)
+        const BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzY2VhZmMzYi00OGJkLTQwYjItYTFhMi0zZjBmMzU0NGM3MTEiLCJpc3MiOiJuOG4iLCJhdWQiOiJtY3Atc2VydmVyLWFwaSIsImp0aSI6Ijc1MjQ5N2I0LWYxZjctNDQ0ZC1iZmMxLTQxMzI0YWM4MDNjMiIsImlhdCI6MTc3MDgxNjkyOH0.BP1VJtVrFs2i1LzGWHGet4toN6NDibrNSK5wN4YEFRM';
 
-            // ===== CONFIG =====
-            const WEBHOOK_URL = 'https://web.ferhost.com.br/webhook/form';
-            const TIMEOUT_MS = 20000;
-            const COOLDOWN_MS = 15000;
-            const SOURCE_TAG = 'landing_vapapp';
+        // Máscara simples para WhatsApp (BR)
+        const phone = document.getElementById('whatsapp');
+        phone.addEventListener('input', () => {
+            const digits = phone.value.replace(/\D/g, '').slice(0, 11);
+            let out = digits;
+            if (out.length > 2) out = `(${out.slice(0, 2)}) ${out.slice(2)}`;
+            if (out.length > 10) out = `${out.slice(0, 10)}-${out.slice(10)}`;
+            phone.value = out;
+        });
 
-            // ===== DOM =====
-            const form = document.getElementById('signupForm');
-            const btn = document.getElementById('btnSubmit');
-            const alertBox = document.getElementById('alertBox');
-            const whatsappInput = document.getElementById('whatsapp');
-            const honeypot = document.getElementById('website_field');
-            const originalCTA = btn.textContent;
+        const form = document.getElementById('lead-form');
+        const success = document.getElementById('alert-success');
+        const error = document.getElementById('alert-error');
+        const submitBtn = document.getElementById('submit-btn');
 
-            let lastSubmitTime = 0;
+        const show = el => { el.style.display = 'block'; };
+        const hide = el => { el.style.display = 'none'; };
 
-            // ===== MÁSCARA WHATSAPP =====
-            function onlyDigits(v) { return v.replace(/\D/g, ''); }
+        function basicValidate() {
+            hide(success); hide(error);
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const whats = document.getElementById('whatsapp').value.replace(/\D/g, '');
+            const emailOk = /.+@.+\..+/.test(email);
+            const whatsOk = whats.length >= 10;
+            return nome.length >= 2 && emailOk && whatsOk;
+        }
 
-            function maskPhone(v) {
-                var d = onlyDigits(v).slice(0, 11);
-                if (d.length === 0) return '';
-                if (d.length <= 2) return '(' + d;
-                if (d.length <= 6) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
-                if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
-                return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7, 11);
-            }
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            // Honeypot check
+            if (document.getElementById('website_field') && document.getElementById('website_field').value) return;
 
-            whatsappInput.addEventListener('input', function () {
-                var pos = this.selectionStart;
-                var before = this.value.length;
-                this.value = maskPhone(this.value);
-                var after = this.value.length;
-                this.setSelectionRange(pos + (after - before), pos + (after - before));
-            });
+            if (!basicValidate()) { show(error); return; }
 
-            // ===== ALERTAS =====
-            function showAlert(msg, type) {
-                alertBox.className = 'alert alert-' + type + ' show';
-                alertBox.setAttribute('role', type === 'error' ? 'alert' : 'status');
-                alertBox.textContent = msg;
-                alertBox.focus();
-            }
+            // UI Loading
+            submitBtn.disabled = true;
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
 
-            function hideAlert() {
-                alertBox.className = 'alert';
-                alertBox.textContent = '';
-            }
+            // Preparar payload
+            const payload = {
+                nome: document.getElementById('nome').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                whatsapp: document.getElementById('whatsapp').value.replace(/\D/g, ''),
+                page_url: window.location.href,
+                ts: new Date().toISOString()
+            };
 
-            // ===== VALIDAÇÃO =====
-            function validate() {
-                var nome = document.getElementById('nome').value.trim();
-                var email = document.getElementById('email').value.trim();
-                var digits = onlyDigits(whatsappInput.value);
-
-                if (nome.length < 2) {
-                    showAlert('Por favor, informe seu nome (mínimo 2 caracteres).', 'error');
-                    document.getElementById('nome').focus();
-                    return null;
-                }
-                if (!/.+@.+\..+/.test(email)) {
-                    showAlert('Por favor, informe um e-mail válido.', 'error');
-                    document.getElementById('email').focus();
-                    return null;
-                }
-                if (digits.length < 10 || digits.length > 11) {
-                    showAlert('Por favor, informe um WhatsApp válido (10 ou 11 dígitos).', 'error');
-                    whatsappInput.focus();
-                    return null;
-                }
-                return { nome: nome, email: email, whatsapp_digits: digits, whatsapp_masked: whatsappInput.value };
-            }
-
-            // ===== ESTRATÉGIA 1: fetch com CORS (ideal) =====
-            async function sendJSON(payload) {
-                console.log('[FORM] 🔵 Tentativa 1: fetch JSON com CORS');
-                const controller = new AbortController();
-                const timer = setTimeout(function () { controller.abort(); }, TIMEOUT_MS);
-
-                try {
-                    const resp = await fetch(WEBHOOK_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload),
-                        signal: controller.signal
-                    });
-                    clearTimeout(timer);
-                    console.log('[FORM] ✅ JSON com CORS — status:', resp.status);
-                    return resp.ok ? 'ok' : 'fail';
-                } catch (err) {
-                    clearTimeout(timer);
-                    console.warn('[FORM] ⚠️ JSON com CORS falhou:', err.message || err);
-                    return 'cors_error';
-                }
-            }
-
-            // ===== ESTRATÉGIA 2: fetch no-cors form-urlencoded (bypass CORS) =====
-            async function sendNoCors(payload) {
-                console.log('[FORM] 🟡 Tentativa 2: fetch no-cors form-urlencoded (bypass CORS)');
-                const controller = new AbortController();
-                const timer = setTimeout(function () { controller.abort(); }, TIMEOUT_MS);
-
-                var body = new URLSearchParams();
-                body.set('nome', payload.nome);
-                body.set('email', payload.email);
-                body.set('whatsapp', payload.whatsapp_digits);
-                body.set('whatsapp_masked', payload.whatsapp_masked);
-                body.set('source', payload.source);
-                body.set('page_url', payload.page_url);
-                body.set('ts', payload.ts);
-
-                try {
-                    await fetch(WEBHOOK_URL, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: body.toString(),
-                        signal: controller.signal
-                    });
-                    clearTimeout(timer);
-                    // mode: 'no-cors' retorna resposta opaca (status 0)
-                    // Se não houve exceção, os dados FORAM enviados
-                    console.log('[FORM] ✅ no-cors enviado (resposta opaca — dados enviados com sucesso)');
-                    return 'ok';
-                } catch (err) {
-                    clearTimeout(timer);
-                    console.error('[FORM] ❌ no-cors também falhou:', err.message || err);
-                    return 'fail';
-                }
-            }
-
-            // ===== ESTRATÉGIA 3: form POST nativo via iframe oculto (último recurso) =====
-            function sendFormPost(payload) {
-                console.log('[FORM] 🔴 Tentativa 3: form POST nativo via iframe oculto');
-                return new Promise(function (resolve) {
-                    // Criar iframe temporário
-                    var iframe = document.createElement('iframe');
-                    iframe.name = 'webhookFallback_' + Date.now();
-                    iframe.style.cssText = 'display:none;width:0;height:0;border:0';
-                    document.body.appendChild(iframe);
-
-                    // Criar form temporário
-                    var tempForm = document.createElement('form');
-                    tempForm.method = 'POST';
-                    tempForm.action = WEBHOOK_URL;
-                    tempForm.target = iframe.name;
-                    tempForm.style.display = 'none';
-
-                    // Adicionar campos
-                    var fields = {
-                        nome: payload.nome,
-                        email: payload.email,
-                        whatsapp: payload.whatsapp_digits,
-                        whatsapp_masked: payload.whatsapp_masked,
-                        source: payload.source,
-                        page_url: payload.page_url,
-                        ts: payload.ts
-                    };
-                    for (var key in fields) {
-                        var input = document.createElement('input');
-                        input.type = 'hidden';
-                        input.name = key;
-                        input.value = fields[key];
-                        tempForm.appendChild(input);
-                    }
-
-                    document.body.appendChild(tempForm);
-
-                    // Timeout de segurança
-                    var done = false;
-                    var timeout = setTimeout(function () {
-                        if (!done) {
-                            done = true;
-                            console.log('[FORM] ✅ form POST enviado (timeout — assumindo sucesso)');
-                            cleanup();
-                            resolve('ok');
-                        }
-                    }, 5000);
-
-                    iframe.addEventListener('load', function () {
-                        if (!done) {
-                            done = true;
-                            clearTimeout(timeout);
-                            console.log('[FORM] ✅ form POST — iframe carregou');
-                            cleanup();
-                            resolve('ok');
-                        }
-                    });
-
-                    function cleanup() {
-                        try { document.body.removeChild(iframe); } catch (e) { }
-                        try { document.body.removeChild(tempForm); } catch (e) { }
-                    }
-
-                    tempForm.submit();
+            try {
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${BEARER_TOKEN}`
+                    },
+                    body: JSON.stringify(payload)
                 });
-            }
 
-            // ===== SUBMIT =====
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                hideAlert();
-
-                // Honeypot
-                if (honeypot && honeypot.value) {
-                    console.log('[FORM] 🚫 Honeypot ativado — envio bloqueado');
-                    return;
-                }
-
-                // Anti-spam: cooldown de 15s
-                var now = Date.now();
-                if (now - lastSubmitTime < COOLDOWN_MS) {
-                    var wait = Math.ceil((COOLDOWN_MS - (now - lastSubmitTime)) / 1000);
-                    showAlert('Aguarde ' + wait + 's antes de enviar novamente.', 'error');
-                    return;
-                }
-
-                // Validação
-                var data = validate();
-                if (!data) return;
-
-                // Montar payload
-                var payload = {
-                    nome: data.nome,
-                    email: data.email,
-                    whatsapp_digits: data.whatsapp_digits,
-                    whatsapp_masked: data.whatsapp_masked,
-                    source: SOURCE_TAG,
-                    page_url: window.location.href,
-                    ts: new Date().toISOString()
-                };
-
-                console.log('[FORM] 📦 Payload:', JSON.stringify(payload, null, 2));
-
-                // Loading
-                btn.disabled = true;
-                btn.textContent = 'Enviando…';
-                lastSubmitTime = Date.now();
-
-                // ===== CADEIA DE TENTATIVAS =====
-                var result;
-
-                // 1) Tenta JSON com CORS
-                result = await sendJSON(payload);
-
-                // 2) Se CORS falhou, tenta no-cors form-urlencoded
-                if (result === 'cors_error') {
-                    result = await sendNoCors(payload);
-                }
-
-                // 3) Se tudo falhou, tenta form POST nativo
-                if (result === 'fail') {
-                    result = await sendFormPost(payload);
-                }
-
-                // Resultado
-                btn.disabled = false;
-                btn.textContent = originalCTA;
-
-                if (result === 'ok') {
-                    console.log('[FORM] 🎉 Envio concluído com sucesso!');
-                    showAlert('Inscrição realizada com sucesso! Você receberá as novidades no WhatsApp.', 'success');
+                if (response.ok) {
+                    show(success);
+                    hide(error);
                     form.reset();
                 } else {
-                    console.error('[FORM] ❌ Todas as tentativas falharam.');
-                    showAlert('Não foi possível enviar. Verifique sua conexão e tente novamente.', 'error');
-                    lastSubmitTime = 0;
+                    console.error('Erro no webhook:', response.status, response.statusText);
+                    show(error);
                 }
-            });
-        })();
+            } catch (err) {
+                console.error('Erro de rede:', err);
+                show(error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                if (getComputedStyle(success).display === 'block') {
+                    success.focus && success.focus();
+                }
+            }
+        });
     </script>
 </body>
 
