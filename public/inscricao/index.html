@@ -291,11 +291,14 @@
                     hide(error);
                     form.reset();
                 } else {
-                    console.error('Erro no webhook:', response.status, response.statusText);
+                    const errorText = `Erro ${response.status}: ${response.statusText}`;
+                    console.error('Erro no webhook:', errorText);
+                    error.textContent = `Erro ao enviar: ${errorText}`;
                     show(error);
                 }
             } catch (err) {
                 console.error('Erro de rede:', err);
+                error.textContent = `Erro de conexão: ${err.message}. Verifique o console.`;
                 show(error);
             } finally {
                 submitBtn.disabled = false;
