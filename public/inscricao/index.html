@@ -276,12 +276,18 @@
             };
 
             try {
+                // Tentar enviar como form-urlencoded para evitar problemas de compatibilidade/JSON
+                const formData = new URLSearchParams();
+                for (const key in payload) {
+                    formData.append(key, payload[key]);
+                }
+
                 const response = await fetch(WEBHOOK_URL, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/x-www-form-urlencoded'
                     },
-                    body: JSON.stringify(payload)
+                    body: formData.toString()
                 });
 
                 if (response.ok) {
