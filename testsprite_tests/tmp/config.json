@@ -1,0 +1,16 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "executionArgs": {
+    "projectName": "innova digital - pagina",
+    "projectPath": "C:\\Users\\LATITUDE 3490\\Music\\innova digital - pagina",
+    "testIds": [],
+    "additionalInstruction": "Verificar se todos os problemas anteriores foram corrigidos: CSS carregando corretamente, API keys não expostas, formulário de contato funcionando, seção de responsabilidade com ID, e todos os componentes funcionais",
+    "envs": {
+      "API_KEY": "sk-user-6WfZUy9gkYX5MYFuCwU7OnIpDsrMXYqTPclaPCh_8gDjYpBHe3Sk9LFhJHBY0R-HVU7oNu_FVe7Es5eirPcztmrBmnxWgMZ7GqnVwLrd0AmbBYZdoZt8uy6cd3KmbE25Bes"
+    }
+  },
+  "proxy": "http://2aec2a36-d501-44aa-89fe-6c6be740d53b:kDOJEihJWMzbnJjoW4UWGxe1Qzaol9Fr@tun.testsprite.com:8080"
+}

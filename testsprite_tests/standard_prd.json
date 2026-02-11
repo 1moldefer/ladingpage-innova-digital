@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "project": "Innova Digital Landing Page",
+    "date": "2026-01-15",
+    "prepared_by": "Software Development Manager"
+  },
+  "product_overview": "Innova Digital Landing Page is a responsive, modern institutional website for Innova Digital featuring an AI-powered chatbot for automated customer service, a countdown to the VAP App launch, and comprehensive company and service information sections.",
+  "core_goals": [
+    "Provide a professional and engaging online presence for Innova Digital.",
+    "Enable users to easily learn about the company, its services, and the upcoming VAP App.",
+    "Offer an intelligent chatbot that can answer queries related to company info and the VAP App.",
+    "Ensure the site is fully responsive across devices (mobile, tablet, desktop).",
+    "Facilitate user contact with the company via a contact form integrated with FormSubmit.",
+    "Implement a secure backend architecture protecting sensitive API keys and supporting chatbot functionality."
+  ],
+  "key_features": [
+    "Responsive Navbar with mobile menu and WhatsApp contact button.",
+    "Hero section with engaging animations to welcome visitors.",
+    "About section detailing Innova Digital enterprise.",
+    "Services section showcasing the solutions offered by the company.",
+    "VAP App section featuring app information and a launch countdown timer (set for 19/02/2026).",
+    "Corporate responsibility and values presentation.",
+    "Contact form integrated with FormSubmit for direct user inquiries.",
+    "Footer with comprehensive company information and social links.",
+    "AI-powered chatbot integrated using OpenAI and Google Gemini AI for contextual answers about the company and the VAP App.",
+    "Secure Express backend API handling chatbot requests with CORS and environment variable protection.",
+    "100% responsive design across devices and screen sizes."
+  ],
+  "user_flow_summary": [
+    "User visits landing page and navigates through sections via Navbar.",
+    "User reads about the company, services, and VAP App details.",
+    "User interacts with the AI chatbot by typing questions related to Innova Digital or VAP App.",
+    "Chatbot processes user input via backend APIs using OpenAI and Google Gemini AI and returns relevant responses.",
+    "User uses the launch countdown to track VAP App release date (19 February 2026).",
+    "User submits inquiries through the contact form which sends messages via FormSubmit.",
+    "User accesses contact info and social media links through the footer and navbar WhatsApp button."
+  ],
+  "validation_criteria": [
+    "All UI components render correctly and adapt responsively to various screen sizes.",
+    "Chatbot answers accurately and only on permitted topics: company info, VAP App functionalities, launch, pricing, and contact details.",
+    "No chatbot responses related to medical, diagnostic, or clinical advice are provided.",
+    "API keys remain secure and are not exposed in the frontend codebase or public repos.",
+    "Contact form submissions are correctly sent and received through FormSubmit.",
+    "Launch countdown timer accurately displays time remaining until 19 February 2026.",
+    "Navigation links and menus function correctly including mobile menu toggling.",
+    "All external links (WhatsApp, social media) open correctly in new tabs or appropriate apps.",
+    "Backend services handle CORS, environment variables, and security best practices appropriately."
+  ],
+  "code_summary": {
+    "tech_stack": [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Express",
+      "Node.js",
+      "TailwindCSS",
+      "Google Gemini AI",
+      "OpenAI API"
+    ],
+    "features": [
+      {
+        "name": "Navbar",
+        "description": "Barra de navegação responsiva com menu mobile, links de navegação e botão WhatsApp",
+        "files": [
+          "components/Navbar.tsx"
+        ]
+      },
+      {
+        "name": "Hero",
+        "description": "Seção hero principal da página inicial",
+        "files": [
+          "components/Hero.tsx"
+        ]
+      },
+      {
+        "name": "About",
+        "description": "Seção sobre a empresa Innova Digital",
+        "files": [
+          "components/About.tsx"
+        ]
+      },
+      {
+        "name": "Services",
+        "description": "Seção de serviços oferecidos pela empresa",
+        "files": [
+          "components/Services.tsx"
+        ]
+      },
+      {
+        "name": "VapApp",
+        "description": "Seção de apresentação do aplicativo VAP App",
+        "files": [
+          "components/VapApp.tsx"
+        ]
+      },
+      {
+        "name": "Responsibility",
+        "description": "Seção sobre responsabilidade e valores da empresa",
+        "files": [
+          "components/Responsibility.tsx"
+        ]
+      },
+      {
+        "name": "Contact",
+        "description": "Formulário de contato integrado com FormSubmit",
+        "files": [
+          "components/Contact.tsx"
+        ]
+      },
+      {
+        "name": "Footer",
+        "description": "Rodapé da página com informações e links",
+        "files": [
+          "components/Footer.tsx"
+        ]
+      },
+      {
+        "name": "AIConsultant",
+        "description": "Chatbot de consultor virtual com integração de API para respostas sobre a empresa e VAP App",
+        "files": [
+          "components/AIConsultant.tsx"
+        ]
+      },
+      {
+        "name": "LaunchCountdown",
+        "description": "Componente de contagem regressiva para lançamento",
+        "files": [
+          "components/LaunchCountdown.tsx"
+        ]
+      },
+      {
+        "name": "Differentials",
+        "description": "Componente de diferenciais da empresa",
+        "files": [
+          "components/Differentials.tsx"
+        ]
+      },
+      {
+        "name": "Chat API Backend",
+        "description": "API backend Express para processar mensagens do chatbot usando OpenAI",
+        "files": [
+          "server.js",
+          "api/chat.js"
+        ]
+      },
+      {
+        "name": "Gemini Service",
+        "description": "Serviço de integração com Google Gemini AI para respostas do chatbot",
+        "files": [
+          "services/geminiService.ts"
+        ]
+      },
+      {
+        "name": "Local FAQ",
+        "description": "FAQ local para respostas rápidas",
+        "files": [
+          "services/localFAQ.ts"
+        ]
+      },
+      {
+        "name": "Type Definitions",
+        "description": "Definições de tipos TypeScript para componentes e serviços",
+        "files": [
+          "types.ts"
+        ]
+      },
+      {
+        "name": "Main App",
+        "description": "Componente principal que orquestra todos os componentes da página",
+        "files": [
+          "App.tsx"
+        ]
+      },
+      {
+        "name": "Entry Point",
+        "description": "Ponto de entrada da aplicação React",
+        "files": [
+          "index.tsx"
+        ]
+      }
+    ]
+  }
+}

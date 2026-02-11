@@ -1,0 +1,437 @@
+[
+  {
+    "id": "TC001",
+    "title": "Responsive Navbar Rendering and Functionality",
+    "description": "Verify that the navbar renders correctly on desktop, tablet, and mobile devices, including the mobile menu toggle and WhatsApp contact button functionality.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the landing page on a desktop screen."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify navbar links are displayed horizontally and are clickable."
+      },
+      {
+        "type": "action",
+        "description": "Resize the window to tablet dimensions."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify navbar adapts layout appropriately and remains functional."
+      },
+      {
+        "type": "action",
+        "description": "Resize the window to mobile screen size."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify mobile menu toggle button is visible."
+      },
+      {
+        "type": "action",
+        "description": "Click on the mobile menu toggle button."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify mobile menu expands and navigation links are clickable."
+      },
+      {
+        "type": "action",
+        "description": "Click the WhatsApp contact button."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the WhatsApp link opens in a new tab or appropriate app."
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Hero Section Animation and Content Display",
+    "description": "Ensure the hero section loads with the intended animations and displays correct welcome content.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the landing page."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the hero section is visible at the top of the page."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify animations play smoothly on page load."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that welcome messages or titles specific to Innova Digital appear correctly."
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "About Section Content Verification",
+    "description": "Validate that the About section accurately displays company information for Innova Digital and is properly styled.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll or navigate to the About section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify presence of the company description text."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text is readable and formatted correctly on all device sizes."
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Services Section Display and Content Accuracy",
+    "description": "Confirm that all services provided by Innova Digital are displayed and that content matches the PRD descriptions.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Services section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all listed services appear."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify content accuracy and clarity."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify section responsiveness across device types."
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "VAP App Section and Launch Countdown Timer Accuracy",
+    "description": "Verify that the VAP App section displays accurate app info and that the countdown timer reflects the correct time remaining until 19 February 2026.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the VAP App section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify app information text is present and correct."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the countdown timer displays days, hours, minutes, and seconds remaining until 19/02/2026."
+      },
+      {
+        "type": "action",
+        "description": "Mock system date to just before and after 19/02/2026."
+      },
+      {
+        "type": "assertion",
+        "description": "Validate countdown updates correctly and stops or changes state after launch date."
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Corporate Responsibility and Values Section Visibility and Content",
+    "description": "Ensure that the Corporate Responsibility and Values section loads correctly with accurate content.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Corporate Responsibility section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify relevant text and images load correctly."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify content matches specified company values."
+      },
+      {
+        "type": "assertion",
+        "description": "Check layout responsiveness across devices."
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Contact Form Submission Via FormSubmit",
+    "description": "Test the Contact form submitting user inquiries successfully through FormSubmit integration.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Contact form section."
+      },
+      {
+        "type": "action",
+        "description": "Fill all required fields with valid data."
+      },
+      {
+        "type": "action",
+        "description": "Submit the form."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify form submission success confirmation is displayed."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the inquiry is received via FormSubmit backend or email."
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Contact Form Validation and Error Handling",
+    "description": "Validate that the contact form enforces required fields and proper error messages are displayed for invalid input.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Contact form."
+      },
+      {
+        "type": "action",
+        "description": "Try submitting the form with empty required fields."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify appropriate validation error messages appear."
+      },
+      {
+        "type": "action",
+        "description": "Enter invalid email format and attempt submission."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify email validation error message is shown."
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Footer Links and Social Media Redirects",
+    "description": "Confirm footer displays all company information and social links, and external links open correctly in new browser tabs or applications.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll to or navigate to the footer section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify company information is displayed."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify social media and external links are present."
+      },
+      {
+        "type": "action",
+        "description": "Click each social media or external link."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each link opens correctly in a new browser tab or appropriate app."
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "AI Chatbot Interaction Valid Queries",
+    "description": "Validate that the AI-powered chatbot responds correctly to permitted user queries about company info, VAP App functionalities, launch date, pricing, and contact details.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Access the AI chatbot interface."
+      },
+      {
+        "type": "action",
+        "description": "Input a question about company information."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify chatbot replies accurately and relevantly."
+      },
+      {
+        "type": "action",
+        "description": "Input a question about VAP App launch date."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify chatbot provides correct launch date details."
+      },
+      {
+        "type": "action",
+        "description": "Ask about VAP App pricing."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify chatbot responds with accurate pricing information."
+      },
+      {
+        "type": "action",
+        "description": "Ask for company contact information."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify chatbot returns valid contact details."
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "AI Chatbot Rejects Disallowed Queries",
+    "description": "Verify that the chatbot does not provide responses or redirects user when asked for medical, diagnostic, or clinical advice.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the chatbot and input a medical advice query."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify chatbot replies with a refusal or redirect message, not medical advice."
+      },
+      {
+        "type": "action",
+        "description": "Input clinical or diagnostic question."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify chatbot consistently refuses to provide medical-related responses."
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Backend API Security - API Key Exposure Check",
+    "description": "Confirm that sensitive API keys used by backend chatbot services are not exposed in frontend code or public repositories.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Review deployed frontend bundle code and source maps."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no API keys or secrets for OpenAI or Google Gemini appear."
+      },
+      {
+        "type": "action",
+        "description": "Check public GitHub repositories for committed secrets."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify environment variable files or secrets are not publicly accessible."
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Backend API Handling of Chatbot Requests with CORS Enabled",
+    "description": "Evaluate that the Express backend API properly handles chatbot request processing with CORS configured to allow frontend-origin requests and blocks unauthorized origins.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send a chatbot API request from the authorized frontend origin."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the request succeeds and returns a valid response."
+      },
+      {
+        "type": "action",
+        "description": "Send a chatbot API request from a disallowed origin."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the request is blocked by CORS policy."
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Navigation Links Functionality and Mobile Menu Toggle",
+    "description": "Test that all navigation links scroll or navigate to appropriate page sections and mobile menu toggles on mobile devices.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Click each nav link on desktop and verify page scrolls to correct section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each section is correctly brought into viewport."
+      },
+      {
+        "type": "action",
+        "description": "Resize window to mobile size and open mobile menu."
+      },
+      {
+        "type": "action",
+        "description": "Click nav links inside mobile menu."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify navigation works and menu closes after selection."
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "100% Responsive Design Verification Across All Sections",
+    "description": "Ensure every page section, including Differentials, Footer, and main content, is fully responsive and visually consistent across mobile, tablet, and desktop screen sizes.",
+    "category": "ui",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the page on desktop, tablet, and mobile devices or corresponding viewport simulators."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no horizontal scroll bars appear unnecessarily."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text, images, buttons, and components resize and rearrange appropriately."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify interactive elements remain accessible and functional."
+      }
+    ]
+  }
+]
