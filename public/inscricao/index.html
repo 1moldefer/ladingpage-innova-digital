@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Inscrição | Curso</title>
+    <meta name="description" content="Inscreva-se para receber acesso e materiais do curso." />
     <style>
         :root {
             --bg: #0b0e12;
@@ -14,6 +15,10 @@
             --accent: #ff6a00;
             --ring: rgba(255, 106, 0, .35);
             --border: #1b2330;
+            --ok: rgba(16, 185, 129, .14);
+            --okb: rgba(16, 185, 129, .35);
+            --err: rgba(239, 68, 68, .14);
+            --errb: rgba(239, 68, 68, .35);
         }
 
         * {
@@ -29,45 +34,66 @@
         body {
             margin: 0;
             font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-            background: linear-gradient(180deg, #0b0e12, #0e1117);
+            background: radial-gradient(1100px 600px at 10% 0%, rgba(255, 106, 0, .18), transparent 55%),
+                radial-gradient(900px 500px at 95% 20%, rgba(255, 208, 137, .12), transparent 55%),
+                linear-gradient(180deg, #0b0e12, #0e1117);
             color: var(--text);
             line-height: 1.5;
         }
 
         .wrap {
-            max-width: 560px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: clamp(16px, 4vw, 24px);
+            padding: clamp(16px, 4vw, 28px);
             min-height: 100svh;
             display: flex;
-            align-items: center
+            align-items: center;
         }
 
         .card {
             width: 100%;
-            background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+            background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: clamp(18px, 4vw, 26px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+            border-radius: 18px;
+            padding: clamp(18px, 4vw, 28px);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, .4);
+            backdrop-filter: blur(8px);
+        }
+
+        .top {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            justify-content: space-between
         }
 
         h1 {
             margin: 0 0 .35rem;
-            font-size: clamp(1.6rem, 4.8vw, 2rem);
-            line-height: 1.2
+            font-size: clamp(1.6rem, 4.6vw, 2.05rem);
+            line-height: 1.15
         }
 
         p.sub {
-            margin: .15rem 0 1rem;
+            margin: .15rem 0 1.1rem;
             color: var(--muted);
             font-size: clamp(.95rem, 3.2vw, 1.05rem)
         }
 
+        .badge {
+            font-size: .82rem;
+            color: #ffd7b8;
+            border: 1px solid rgba(255, 106, 0, .35);
+            background: rgba(255, 106, 0, .10);
+            padding: .35rem .55rem;
+            border-radius: 999px;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
         label {
             display: block;
-            font-weight: 700;
-            margin: .5rem 0 .35rem
+            font-weight: 750;
+            margin: .65rem 0 .35rem
         }
 
         .required {
@@ -85,9 +111,8 @@
             border-radius: 12px;
             padding: 1rem;
             outline: none;
-            transition: border-color .2s, box-shadow .2s, background .2s;
+            transition: border-color .18s, box-shadow .18s, background .18s;
             font-size: 16px;
-            /* evita zoom no iOS */
             min-height: 52px;
         }
 
@@ -100,21 +125,37 @@
             color: #9aa6bb
         }
 
+        .grid {
+            display: grid;
+            gap: 12px
+        }
+
+        .grid.two {
+            grid-template-columns: 1fr
+        }
+
+        @media(min-width:640px) {
+            .grid.two {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
         .actions {
             display: flex;
             gap: .8rem;
-            margin-top: 1.1rem
+            margin-top: 1.1rem;
+            align-items: center
         }
 
-        .actions .btn {
+        .btn {
             flex: 1;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: .5rem;
+            gap: .55rem;
             background: linear-gradient(135deg, var(--accent), #ff9745 55%, #ffd089 120%);
             color: #1a120b;
-            font-weight: 800;
+            font-weight: 900;
             border: none;
             border-radius: 12px;
             padding: 1rem 1.1rem;
@@ -134,8 +175,24 @@
         }
 
         .btn[disabled] {
-            opacity: .6;
+            opacity: .65;
             cursor: not-allowed
+        }
+
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            border: 2px solid rgba(26, 18, 11, .35);
+            border-top-color: rgba(26, 18, 11, .85);
+            animation: spin .8s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
         }
 
         .footnote {
@@ -146,170 +203,197 @@
 
         .alert {
             display: none;
-            margin: .6rem 0 0;
-            padding: .9rem 1rem;
+            margin: .75rem 0 0;
+            padding: .95rem 1rem;
             border-radius: 12px;
             font-size: .95rem
         }
 
         .alert.success {
-            background: rgba(16, 185, 129, .12);
+            background: var(--ok);
             color: #34d399;
-            border: 1px solid rgba(16, 185, 129, .35)
+            border: 1px solid var(--okb)
         }
 
         .alert.error {
-            background: rgba(239, 68, 68, .12);
+            background: var(--err);
             color: #f87171;
-            border: 1px solid rgba(239, 68, 68, .35)
+            border: 1px solid var(--errb)
         }
 
-        /* Muito pequenos */
-        @media (max-width:320px) {
-            .wrap {
-                padding: 14px
-            }
+        .mini {
+            font-size: .86rem;
+            color: var(--muted);
+            margin-top: .35rem
+        }
 
-            .card {
-                padding: 16px
-            }
+        .link {
+            color: #ffd7b8;
+            text-decoration: underline;
+            text-underline-offset: 3px
         }
     </style>
 </head>
 
 <body>
     <div class="wrap">
-        <main class="card">
-            <header>
-                <h1>Inscreva‑se para o curso</h1>
-                <p class="sub">Deixe seu <strong>nome</strong>, <strong>e‑mail</strong> e <strong>WhatsApp</strong> para
-                    receber o acesso e os materiais.</p>
-            </header>
+        <main class="card" aria-labelledby="title">
+            <div class="top">
+                <div>
+                    <h1 id="title">Inscreva-se para o curso</h1>
+                    <p class="sub">Preencha seus dados para receber o acesso e os materiais. Leva menos de 20 segundos.
+                    </p>
+                </div>
+                <div class="badge">Vagas limitadas</div>
+            </div>
 
             <form id="lead-form" novalidate>
-                <!-- Honeypot não é necessário se usarmos fetch com lógica customizada, mas mantemos por segurança -->
-                <input type="text" name="website_field" id="website_field" autocomplete="off" tabindex="-1"
+                <!-- Honeypot anti-bot -->
+                <input type="text" id="website_field" name="website_field" autocomplete="off" tabindex="-1"
                     aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" />
 
-                <div class="field">
-                    <label for="nome">Nome completo<span class="required">*</span></label>
-                    <input id="nome" name="nome" type="text" placeholder="Ex.: Ana Lima" autocomplete="name" required />
-                </div>
-                <div class="field">
-                    <label for="email">E‑mail<span class="required">*</span></label>
-                    <input id="email" name="email" type="email" placeholder="voce@empresa.com" autocomplete="email"
-                        required />
-                </div>
-                <div class="field">
-                    <label for="whatsapp">WhatsApp<span class="required">*</span></label>
-                    <input id="whatsapp" name="whatsapp" type="tel" inputmode="numeric" placeholder="(11) 91234‑5678"
-                        autocomplete="tel" required />
+                <div class="grid">
+                    <div class="field">
+                        <label for="nome">Nome completo<span class="required">*</span></label>
+                        <input id="nome" name="nome" type="text" placeholder="Ex.: Ana Lima" autocomplete="name"
+                            required />
+                    </div>
+
+                    <div class="grid two">
+                        <div class="field">
+                            <label for="email">E-mail<span class="required">*</span></label>
+                            <input id="email" name="email" type="email" placeholder="voce@empresa.com"
+                                autocomplete="email" required />
+                            <div class="mini">Você receberá o material por e-mail.</div>
+                        </div>
+
+                        <div class="field">
+                            <label for="whatsapp">WhatsApp<span class="required">*</span></label>
+                            <input id="whatsapp" name="whatsapp" type="tel" inputmode="numeric"
+                                placeholder="(11) 91234-5678" autocomplete="tel" required />
+                            <div class="mini">Enviaremos avisos e atualizações por WhatsApp.</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="actions">
-                    <button type="submit" id="submit-btn" class="btn">Garantir minha vaga</button>
+                    <button type="submit" id="submit-btn" class="btn">
+                        <span id="btn-text">Garantir minha vaga</span>
+                        <span class="spinner" id="spinner" aria-hidden="true"></span>
+                    </button>
                 </div>
 
-                <div id="alert-success" class="alert success" role="status" aria-live="polite">Inscrição realizada! Em
-                    instantes você recebe os detalhes.</div>
-                <div id="alert-error" class="alert error" role="alert">Não foi possível enviar. Revise os campos e tente
-                    novamente.</div>
-                <p class="footnote">Ao enviar, você concorda em receber comunicações sobre este curso. Você pode se
-                    descadastrar a qualquer momento.</p>
+                <div id="alert-success" class="alert success" role="status" aria-live="polite">
+                    ✅ Inscrição realizada! Em instantes você recebe os detalhes.
+                </div>
+                <div id="alert-error" class="alert error" role="alert">
+                    ❌ Não foi possível enviar. Revise os campos e tente novamente.
+                </div>
+
+                <p class="footnote">
+                    Ao enviar, você concorda em receber comunicações sobre este curso. Você pode se descadastrar a
+                    qualquer momento.
+                    <br />
+                    <span class="mini">Domínio: <a class="link" href="https://innovadigital.com.br" target="_blank"
+                            rel="noopener">innovadigital.com.br</a></span>
+                </p>
             </form>
         </main>
     </div>
 
     <script>
-        // ===== CONFIGURAÇÃO =====
-        // Endpoint do Webhook (ajustado para webhook ao invés de workflow UI)
-        const WEBHOOK_URL = 'https://web.ferhost.com.br/webhook/form';
+        // ✅ Webhook de produção (n8n)
+        const WEBHOOK_URL = "https://web.ferhost.com.br/webhook/form";
 
+        const form = document.getElementById("lead-form");
+        const success = document.getElementById("alert-success");
+        const error = document.getElementById("alert-error");
+        const submitBtn = document.getElementById("submit-btn");
+        const btnText = document.getElementById("btn-text");
+        const spinner = document.getElementById("spinner");
 
-        // Máscara simples para WhatsApp (BR)
-        const phone = document.getElementById('whatsapp');
-        phone.addEventListener('input', () => {
-            const digits = phone.value.replace(/\D/g, '').slice(0, 11);
+        const show = (el) => el.style.display = "block";
+        const hide = (el) => el.style.display = "none";
+
+        // Máscara WhatsApp (BR)
+        const phone = document.getElementById("whatsapp");
+        phone.addEventListener("input", () => {
+            const digits = phone.value.replace(/\D/g, "").slice(0, 11);
             let out = digits;
             if (out.length > 2) out = `(${out.slice(0, 2)}) ${out.slice(2)}`;
             if (out.length > 10) out = `${out.slice(0, 10)}-${out.slice(10)}`;
             phone.value = out;
         });
 
-        const form = document.getElementById('lead-form');
-        const success = document.getElementById('alert-success');
-        const error = document.getElementById('alert-error');
-        const submitBtn = document.getElementById('submit-btn');
-
-        const show = el => { el.style.display = 'block'; };
-        const hide = el => { el.style.display = 'none'; };
+        function getUTMs() {
+            const p = new URLSearchParams(window.location.search);
+            return {
+                utm_source: p.get("utm_source") || "",
+                utm_medium: p.get("utm_medium") || "",
+                utm_campaign: p.get("utm_campaign") || "",
+                utm_term: p.get("utm_term") || "",
+                utm_content: p.get("utm_content") || ""
+            };
+        }
 
         function basicValidate() {
             hide(success); hide(error);
-            const nome = document.getElementById('nome').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const whats = document.getElementById('whatsapp').value.replace(/\D/g, '');
+
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const whatsDigits = document.getElementById("whatsapp").value.replace(/\D/g, "");
+
             const emailOk = /.+@.+\..+/.test(email);
-            const whatsOk = whats.length >= 10;
+            const whatsOk = whatsDigits.length >= 10; // 10 ou 11
             return nome.length >= 2 && emailOk && whatsOk;
         }
 
-        form.addEventListener('submit', async (e) => {
+        function setLoading(isLoading) {
+            submitBtn.disabled = isLoading;
+            spinner.style.display = isLoading ? "inline-block" : "none";
+            btnText.textContent = isLoading ? "Enviando..." : "Garantir minha vaga";
+        }
+
+        form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            // Honeypot check
-            if (document.getElementById('website_field') && document.getElementById('website_field').value) return;
 
-            if (!basicValidate()) { show(error); return; }
+            // Honeypot
+            if (document.getElementById("website_field").value) return;
 
-            // UI Loading
-            submitBtn.disabled = true;
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Enviando...';
+            if (!basicValidate()) {
+                show(error);
+                return;
+            }
 
-            // Preparar payload
+            setLoading(true);
+
             const payload = {
-                nome: document.getElementById('nome').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                whatsapp: document.getElementById('whatsapp').value.replace(/\D/g, ''),
-                page_url: window.location.href,
-                ts: new Date().toISOString()
+                nome: document.getElementById("nome").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                whatsapp: document.getElementById("whatsapp").value.replace(/\D/g, ""),
+                origem: window.location.href,
+                ts: new Date().toISOString(),
+                user_agent: navigator.userAgent,
+                ...getUTMs()
             };
 
             try {
-                // Tentar enviar como form-urlencoded para evitar problemas de compatibilidade/JSON
-                const formData = new URLSearchParams();
-                for (const key in payload) {
-                    formData.append(key, payload[key]);
-                }
-
-                const response = await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: formData.toString()
+                const res = await fetch(WEBHOOK_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
                 });
 
-                if (response.ok) {
-                    show(success);
-                    hide(error);
-                    form.reset();
-                } else {
-                    const errorText = `Erro ${response.status}: ${response.statusText}`;
-                    console.error('Erro no webhook:', errorText);
-                    error.textContent = `Erro ao enviar: ${errorText}`;
-                    show(error);
-                }
+                if (!res.ok) throw new Error("HTTP " + res.status);
+
+                show(success);
+                hide(error);
+                form.reset();
             } catch (err) {
-                console.error('Erro de rede:', err);
-                error.textContent = `Erro de conexão: ${err.message}. Verifique o console.`;
                 show(error);
+                hide(success);
             } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-                if (getComputedStyle(success).display === 'block') {
-                    success.focus && success.focus();
-                }
+                setLoading(false);
             }
         });
     </script>
